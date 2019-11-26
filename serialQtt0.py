@@ -9,7 +9,7 @@ import os
 import fcntl
 from webSerial import funcUartQtt
 from webSerial import lockFile
-
+import time
 
 
 pidfile = 0  
@@ -23,7 +23,7 @@ def ApplicationInstance(locFile):
 		print "another instance is running..."  
 		sys.exit(0)  
 
-
+time.sleep(50)
 serPort = ['/dev/ttyUSB0', 5100, 5100,"/home/pi/log/serialport/"]
 if not os.path.exists(serPort[3]):
     os.mkdir(serPort[3])
